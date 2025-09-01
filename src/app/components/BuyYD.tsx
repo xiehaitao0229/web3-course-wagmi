@@ -80,7 +80,7 @@ const BuyYD = () => {
     return /^\d*\.?\d*$/.test(value);
   };
 
-  // 计算ETH和YD之间的转换
+  // 计算ETH和XHT之间的转换
   const convertEthToYd = (eth: string) => {
     if (!eth || eth === "." || isNaN(Number(eth))) return "";
     const ethValue = parseFloat(eth);

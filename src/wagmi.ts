@@ -18,7 +18,7 @@ export function getConfig() {
     ssr: true,
     transports: {
       [mainnet.id]: http(),
-      [sepolia.id]: http(`https://sepolia.infura.io/v3/${alchemyApiKey}`),  
+      [sepolia.id]: http(`https://sepolia.infura.io/v3/51a6633160b04de3ba57b8df56f1fa8b`),  
     },
   })
 }

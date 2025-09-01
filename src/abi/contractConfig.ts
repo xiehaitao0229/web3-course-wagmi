@@ -5,18 +5,18 @@ import MiniNFTABI from './MiniNFT.json'
 
 //购买YD token
 export const YDTOKEN_CONTRACT = {
-    address: "0xF342495D353A8219E29825704Be6EC943164945d",
+    address: "0x8FeC745D6fa25355642BC22716fC37EDcC4a85d5",
     abi: YdTokenABI.abi
 } as const;
 
 //购买课程
 export const YDCOURSE_CONTRACT = {
-    address: "0xBa91cd76B3FAb4488f6A723a3Ef2e17F15fb0141",
+    address: "0xFE2EF4fEb0AD28c0550B710E7bc34D623c217cD1",
     abi: YdCourseABI.abi
 } as const;
 
 //MiniNFT (NFT铸造) 
 export const NFT_CONTRACT = {
-    address: "0xA5D8A90eC35da000Dd432CecE8D7F2CA14cEbb0f",
+    address: "0x6a976939a0a034EFdF58797168DA9A08e0BcE07C",
     abi: MiniNFTABI.abi
 } as const; 
