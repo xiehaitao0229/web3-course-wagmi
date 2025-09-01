@@ -169,7 +169,7 @@ export default function EditCourse({
       const toast = document.getElementById("toast");
       if (toast) {
         toast.innerHTML = `  
-        <div class="fixed top-4 right-4 flex items-center p-4 mb-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">  
+        <div class="fixed top-4 right-4 flex items-center p-4 mb-4 text-green-300 rounded-lg bg-green-900 border border-green-600" role="alert">  
           <svg class="flex-shrink-0 w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">  
             <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>  
           </svg>  
@@ -213,27 +213,27 @@ export default function EditCourse({
     if (!isModalOpen) return null;
 
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div className="bg-white rounded-lg p-6 w-full max-w-md">
+      <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div className="bg-gray-800 border border-gray-600 rounded-lg p-6 w-full max-w-md">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-bold">修改课程</h2>
+            <h2 className="text-xl font-bold text-white">修改课程</h2>
             <button
               onClick={() => {
                 setIsModalOpen(false);
                 resetForm();
               }}
-              className="text-gray-500 hover:text-gray-700"
+              className="text-gray-400 hover:text-gray-200"
             >
               ✕
             </button>
           </div>
 
           {errorMessage && (
-            <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+            <div className="mb-4 p-4 bg-red-900 border border-red-600 rounded-lg">
               <div className="flex items-start gap-3">
-                <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
                 <div className="flex-1">
-                  <p className="text-red-700 whitespace-pre-line font-medium">
+                  <p className="text-red-300 whitespace-pre-line font-medium">
                     {errorMessage}
                   </p>
                 </div>
@@ -244,7 +244,7 @@ export default function EditCourse({
           <form onSubmit={handleUpdateCourse}>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   课程名称
                 </label>
                 <input
@@ -253,13 +253,13 @@ export default function EditCourse({
                   onChange={(e) =>
                     setFormData((prev) => ({ ...prev, name: e.target.value }))
                   }
-                  className="w-full bg-white px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-gray-700 text-white placeholder-gray-400 px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="请输入课程名称"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   课程价格 (YD)
                 </label>
                 <input
@@ -268,7 +268,7 @@ export default function EditCourse({
                   onChange={(e) =>
                     setFormData((prev) => ({ ...prev, price: e.target.value }))
                   }
-                  className="w-full bg-white px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-gray-700 text-white placeholder-gray-400 px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="请输入课程价格（整数）"
                   step="1"
                   min="1"
@@ -276,7 +276,7 @@ export default function EditCourse({
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   课程描述
                 </label>
                 <textarea
@@ -287,7 +287,7 @@ export default function EditCourse({
                       description: e.target.value,
                     }))
                   }
-                  className="w-full bg-white px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-gray-700 text-white placeholder-gray-400 px-3 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="请输入课程描述"
                   rows={4}
                 />
@@ -303,9 +303,9 @@ export default function EditCourse({
                       isActive: e.target.checked,
                     }))
                   }
-                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-600 bg-gray-700 rounded"
                 />
-                <label className="ml-2 block text-sm text-gray-900">
+                <label className="ml-2 block text-sm text-gray-300">
                   课程激活状态
                 </label>
               </div>
@@ -317,13 +317,13 @@ export default function EditCourse({
                     setIsModalOpen(false);
                     resetForm();
                   }}
-                  className="px-4 py-2 text-gray-600 hover:text-gray-800"
+                  className="px-4 py-2 text-gray-400 hover:text-gray-200"
                 >
                   取消
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   disabled={isUpdateLoading}
                 >
                   {isUpdateLoading ? (
@@ -347,7 +347,7 @@ export default function EditCourse({
     <>
       <button
         onClick={() => setIsModalOpen(true)}
-        className="text-blue-600 hover:text-blue-800"
+        className="text-blue-400 hover:text-blue-300 transition-colors duration-200"
         title="编辑课程"
         disabled={isTransactionPending}
       >
